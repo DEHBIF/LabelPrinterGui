@@ -82,7 +82,7 @@ public:
 class LabelPrinter{
 public:
 	int print(std::string devID, std::string mac, std::string modelName, std::string ID, std::string password, std::string ip, int port){
-		PrinterJob pj(devID, mac, modelName, ID, password);
+		PrinterJob pj(devID, mac, modelName, password, ID);
 		PrinterServer server(ip, port);
 		std::string payload = pj.get();
 		return server.sendPayload(payload);
